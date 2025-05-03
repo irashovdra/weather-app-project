@@ -3,7 +3,9 @@ import styles from "./Header.module.css";
 export const Header = () => {
   return (
     <header className={styles.header}>
-      <a href="" className={styles.header__logo}></a>
+      <a href="/" className={styles.header__logo}>
+        <img src="../../images/header-logo.png" alt="logo" />
+      </a>
       <nav>
         <ul className={styles.headerList}>
           <li className={styles.headerList__item}>
@@ -24,9 +26,11 @@ export const Header = () => {
         </ul>
       </nav>
       <button className={styles.header__btn}>Sign Up</button>
-      <svg className={styles.header__icon}>
-        <use></use>
-      </svg>
+      <img
+        src="../../images/user.png"
+        alt="user"
+        className={styles.header__user}
+      />
     </header>
   );
 };

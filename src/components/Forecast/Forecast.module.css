@@ -1,0 +1,20 @@
+.forecast {
+  padding-top: 60px;
+  padding-bottom: 80px;
+}
+
+.forecastList {
+  display: flex;
+  gap: 90px;
+}
+
+.forecastList__item {
+  width: 320px;
+  height: 430px;
+  border-radius: 20px;
+  background: #e8e8e8;
+}
+
+.forecastPlaces {
+  display: flex;
+}
