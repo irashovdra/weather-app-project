@@ -8,25 +8,41 @@ export const Pets = () => {
         <h3 className={styles.pets__title}></h3>
         <ul className={styles.petsList}>
           <li className={styles.petsList__item}>
-            <img src="" alt="dog ghost" className={styles.petsList__photo} />
+            <img
+              src="../../images/pet1.png"
+              alt="dog ghost"
+              className={styles.petsList__photo}
+            />
             <p className={styles.petsList__text}>
               Rescue pups pose as ghosts in festive photo shoot
             </p>
           </li>
           <li className={styles.petsList__item}>
-            <img src="" alt="cat" className={styles.petsList__photo} />
+            <img
+              src="../../images/pet2.png"
+              alt="cat"
+              className={styles.petsList__photo}
+            />
             <p className={styles.petsList__text}>
               Cat interrupts morning coffee on sunny Washington morning
             </p>
           </li>
           <li className={styles.petsList__item}>
-            <img src="" alt="dog" className={styles.petsList__photo} />
+            <img
+              src="../../images/pet3.png"
+              alt="dog"
+              className={styles.petsList__photo}
+            />
             <p className={styles.petsList__text}>
               New study finds dogs pay more attention to women
             </p>
           </li>
           <li className={styles.petsList__item}>
-            <img src="" alt="dog" className={styles.petsList__photo} />
+            <img
+              src="../../images/pet4.png"
+              alt="dog"
+              className={styles.petsList__photo}
+            />
             <p className={styles.petsList__text}>
               Petting dogs gives health benefit, even if they are not yours
             </p>

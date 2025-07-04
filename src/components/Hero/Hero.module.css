@@ -2,6 +2,7 @@
   padding: 100px 0px;
   background-image: url(../../images/hero-bg.jpg);
   background-position: center;
+  background-size: cover;
 }
 
 .hero__title {
@@ -47,14 +48,19 @@
   padding: 12px 39px;
   border-radius: 10px;
   background: #d9d9d9;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  outline: none;
+  border: none;
 }
 
 .hero__btn {
   border-radius: 0px 10px 10px 0px;
-  border-left: 2px solid #000;
+  outline: 2px solid #000;
   background: #ffb36c;
-  padding: 8px 10px;
+  padding: 6px 8px;
   position: absolute;
   top: 0;
-  right: -70px;
+  right: 190px;
 }
