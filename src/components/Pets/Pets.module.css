@@ -1,0 +1,21 @@
+.petsList {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.petsList__photo {
+    border-radius: 10px;
+width: 270px;
+height: 208px;
+flex-shrink: 0;
+}
+
+.petsList__text {
+    color: #000;
+font-family: Montserrat;
+font-size: 16px;
+font-weight: 500;
+}
