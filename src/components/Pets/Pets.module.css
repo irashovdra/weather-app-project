@@ -1,3 +1,10 @@
+.pets__title {
+    color: #000;
+font-family: Montserrat;
+font-size: 20px;
+font-weight: 500;
+}
+
 .petsList {
     display: flex;
     gap: 20px;
@@ -15,6 +22,16 @@ flex-shrink: 0;
 
 .petsList__text {
     color: #000;
+font-family: Montserrat;
+font-size: 16px;
+font-weight: 500;
+}
+
+.pets__btn {
+    border-radius: 10px;
+background: #FFB36C;
+padding: 10px 30px;
+color: #000;
 font-family: Montserrat;
 font-size: 16px;
 font-weight: 500;

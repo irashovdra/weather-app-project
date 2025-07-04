@@ -5,7 +5,7 @@ export const Pets = () => {
   return (
     <section className={styles.pets}>
       <Container>
-        <h3 className={styles.pets__title}></h3>
+        <h2 className={styles.pets__title}>Interacting with our pets</h2>
         <ul className={styles.petsList}>
           <li className={styles.petsList__item}>
             <img
