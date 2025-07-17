@@ -1,18 +1,186 @@
-.footer__title {
-    color: #000;
-font-family: "Montserrat Alternates";
-font-size: 16px;
-font-weight: 500;
-margin-bottom: 10px;
+/* Footer.module.css */
+.footerContainer {
+  background: #ffb36c;
+  padding: 30px 0;
 }
 
-.footerAddress__text {
-    color: #000;
-font-family: "Montserrat Alternates";
-font-size: 12px;
-font-weight: 500;
+@media (min-width: 834px) {
+  .footerContainer {
+    padding: 35px 0;
+  }
 }
 
-.footerAddress {
-    margin-right: 100px;
+@media (min-width: 1440px) {
+  .footerContainer {
+    padding: 40px 0 64px;
+  }
+}
+
+.footerContent {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+@media (min-width: 834px) {
+  .footerContent {
+    flex-wrap: nowrap;
+  }
+}
+
+.logoContainer {
+  flex-shrink: 0;
+  margin-left: 50px;
+  width: 50px;
+  height: 34px;
+}
+
+.logoContainer img {
+  width: 100%;
+  height: 100%;
+}
+
+@media (min-width: 834px) {
+  .logoContainer {
+    margin-left: 100px;
+    width: 58px;
+    height: 40px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .logoContainer {
+    margin-left: 150px;
+    width: 90px;
+    height: 62px;
+  }
+}
+
+.addressAndContact {
+  display: block;
+}
+
+@media (min-width: 834px) {
+  .addressAndContact {
+    display: flex;
+  }
+}
+
+@media (min-width: 1440px) {
+  .addressAndContact {
+    display: flex;
+  }
+}
+
+.sectionTitle {
+  color: #000;
+  font-family: "Montserrat Alternates", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+@media (min-width: 834px) {
+  .sectionTitle {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .sectionTitle {
+    font-size: 16px;
+  }
+}
+
+.addressSection {
+  text-align: center;
+}
+
+@media (min-width: 834px) {
+  .addressSection {
+    margin-left: 100px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .addressSection {
+    margin-left: 103px;
+  }
+}
+
+.addressList {
+  margin-top: 15px;
+}
+
+@media (min-width: 1440px) {
+  .addressList {
+    margin-top: 10px;
+  }
+}
+
+.addressItem {
+  color: #000;
+  font-family: "Montserrat Alternates", sans-serif;
+  font-size: 8px;
+  font-weight: 500;
+}
+
+@media (min-width: 834px) {
+  .addressItem {
+    font-size: 10px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .addressItem {
+    font-size: 12px;
+  }
+}
+
+.contactSection {
+  margin: 25px auto 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (min-width: 834px) {
+  .contactSection {
+    margin-left: 100px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .contactSection {
+    margin-left: 103px;
+  }
+}
+
+.contactList {
+  display: flex;
+  gap: 20px;
+  margin-top: 17px;
+}
+
+@media (min-width: 834px) {
+  .contactList {
+    margin-top: 15px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .contactList {
+    margin-top: 10px;
+  }
+}
+
+.contactItem img {
+  width: 35px;
+  height: 35px;
+}
+
+@media (min-width: 1440px) {
+  .contactItem img {
+    width: 40px;
+    height: 40px;
+  }
 }

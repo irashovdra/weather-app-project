@@ -1,38 +1,45 @@
+// Footer.jsx
+import React from "react";
 import styles from "./Footer.module.css";
-import { Container } from "../Container/Container";
+import logo from "../../img/logo 2.png";
+import inst from "../../img/svgs/inst.svg";
+import face from "../../img/svgs/facebook.svg";
+import whatsapp from "../../img/svgs/whatsapp.svg";
 
-export const Footer = () => {
+const Footer = () => {
   return (
-    <footer className="footer">
-      <Container>
-        <a href="/" className="footer__logo">
-        <img src="../../images/logo.png" alt="logo" />
-        </a>
-        <h3 className="footer__title1">Address</h3>
-        <ul className="footerAddress">
-          <li className="footerAddress__item">
-            <p className="footerAddress__text">Svobody str. 35</p>
-          </li>
-          <li className="footerAddress__item">
-            <p className="footerAddress__text">Kyiv</p>
-          </li>
-          <li className="footerAddress__item">
-            <p className="footerAddress__text">Ukraine</p>
-          </li>
-        </ul>
-        <h3 className="footer__title2">Contact us</h3>
-        <ul className="footerContacts">
-          <li className="footerContacts__item">
-            <svg className="footerContacts__icon"></svg>
-          </li>
-          <li className="footerContacts__item">
-            <svg className="footerContacts__icon"></svg>
-          </li>
-          <li className="footerContacts__item">
-            <svg className="footerContacts__icon"></svg>
-          </li>
-        </ul>
-      </Container>
+    <footer className={styles.footerContainer}>
+      <div className={styles.footerContent}>
+        <div className={styles.logoContainer}>
+          <img src={logo} alt="Logo" />
+        </div>
+        <div className={styles.addressAndContact}>
+          <div className={styles.addressSection}>
+            <h2 className={styles.sectionTitle}>Address</h2>
+            <ul className={styles.addressList}>
+              <li className={styles.addressItem}>Svobody str. 35</li>
+              <li className={styles.addressItem}>Kyiv</li>
+              <li className={styles.addressItem}>Ukraine</li>
+            </ul>
+          </div>
+          <div className={styles.contactSection}>
+            <h2 className={styles.sectionTitle}>Contact us</h2>
+            <ul className={styles.contactList}>
+              <li className={styles.contactItem}>
+                <a href="#"><img src={inst} alt="Instagram" /></a>
+              </li>
+              <li className={styles.contactItem}>
+                <a href="#"><img src={face} alt="Facebook" /></a>
+              </li>
+              <li className={styles.contactItem}>
+                <a href="#"><img src={whatsapp} alt="WhatsApp" /></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </footer>
   );
 };
+
+export default Footer;

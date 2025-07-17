@@ -1,66 +1,217 @@
 .hero {
-  padding: 100px 0px;
-  background-image: url(../../images/hero-bg.jpg);
+  box-sizing: border-box;
+  color: white;
+  font-family: Montserrat;
+  background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  height: 345px;
+  padding: 50px 116px 100px;
 }
 
-.hero__title {
-  color: #fff;
-  font-size: 40px;
+h2 {
+  margin-bottom: 35px;
+  font-size: 14px;
   font-weight: 600;
   text-align: center;
-  margin-bottom: 80px;
 }
 
-.heroList {
-  display: flex;
-  gap: 104px;
-  margin-bottom: 137px;
-  justify-content: center;
-  align-items: center;
-}
-
-.heroList__item {
-  max-width: 345px;
-}
-
-.heroList:nth-child(1) {
-  text-align: right;
-}
-
-.heroList:nth-child(2) {
-  text-align: left;
-}
-
-.heroList__text {
-  color: #fff;
-  font-size: 24px;
-  font-weight: 500;
-}
-
-.hero__filling {
+.infoBlock {
   position: relative;
+  padding-left: 25px;
+  width: 161px;
+  margin: 0 auto 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
 }
 
-.hero__search {
-  width: 625px;
-  padding: 12px 39px;
-  border-radius: 10px;
-  background: #d9d9d9;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  outline: none;
+.infoBlock span {
+  height: 80px;
+  border: 1px solid #fff;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+p {
+  font-size: 10px;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.searchForm {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 174px;
+  margin: 0 auto;
+}
+
+.searchInput {
+  width: 174px;
+  height: 10px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  padding: 4px 0 4px 10px;
+  color: black;
+  font-size: 6px;
   border: none;
 }
 
-.hero__btn {
-  border-radius: 0px 10px 10px 0px;
-  outline: 2px solid #000;
+.searchInput::placeholder {
+  color: #878787;
+  font-family: "Montserrat";
+  font-weight: 500;
+  font-size: 6px;
+}
+
+.searchInput:focus,
+.searchInput:active {
+  outline: none;
+}
+
+.searchButton {
   background: #ffb36c;
-  padding: 6px 8px;
+  width: 17px;
+  height: 18px;
+  border: none;
+  border-radius: 0 10px 10px 0;
+  padding: 1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.searchButton img {
+  width: 9px;
+}
+
+.searchDrop {
+  margin: 0;
+  padding: 0;
   position: absolute;
-  top: 0;
-  right: 190px;
+  top: 127%;
+  left: 0;
+  width: 645px;
+  background-color: #eaeaea;
+  z-index: 99;
+  border-radius: 0 0 10px 10px;
+}
+
+.searchDrop li {
+  height: 45px;
+  width: 100%;
+  padding: 0 15px;
+  display: flex;
+  align-items: center;
+  color: #2b2b2b;
+  cursor: pointer;
+  user-select: none;
+}
+
+.searchDrop li:hover {
+  background-color: #d7d7d7;
+  border-radius: 10px;
+}
+
+.searchDrop li img {
+  width: 18px;
+  height: 18px;
+  margin-right: 10px;
+}
+
+/* Media Queries */
+@media screen and (min-width: 834px) {
+  .hero {
+    padding: 40px 211px;
+  }
+  h2 {
+    font-size: 20px;
+    margin-bottom: 40px;
+  }
+  p {
+    font-size: 14px;
+  }
+  .infoBlock {
+    flex-direction: row;
+    width: 407px;
+    padding-right: 71px;
+    padding-left: 0;
+    justify-content: space-between;
+  }
+  .infoBlock span {
+    position: relative;
+    height: 110px;
+  }
+  .searchForm {
+    width: 402px;
+    height: 27px;
+    margin-top: 64px;
+  }
+  .searchInput {
+    width: 373px;
+    font-size: 10px;
+    border-radius: 10px 0 0 10px;
+    background: #d9d9d9;
+  }
+  .searchInput::placeholder {
+    font-size: 10px;
+  }
+  .searchButton {
+    width: 29.4px;
+    height: 25px;
+  }
+  .searchButton img {
+    width: 16px;
+  }
+  .searchDrop {
+    width: 372px;
+    top: 95%;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .hero {
+    padding: 100px 323px;
+    height: 595px;
+  }
+  h2 {
+    font-size: 40px;
+    margin-bottom: 80px;
+  }
+  p {
+    font-size: 24px;
+  }
+  .infoBlock {
+    width: 713px;
+    padding-right: 116px;
+  }
+  .infoBlock span {
+    height: 144px;
+  }
+  .searchForm {
+    width: 625px;
+    padding-right: 60px;
+  }
+  .searchInput {
+    width: 625px;
+    height: 42px;
+    font-size: 16px;
+    background: #d9d9d9;
+  }
+  .searchInput::placeholder {
+    font-size: 14px;
+  }
+  .searchButton {
+    width: 50px;
+    height: 41px;
+  }
+  .searchButton img {
+    width: 25px;
+  }
+  .searchDrop {
+    width: 625px;
+  }
 }

@@ -1,36 +1,74 @@
+// Header.jsx
+import React, { useState } from "react";
 import styles from "./Header.module.css";
+import logo from "../../img/logo.jpg";
+import user from "../../img/user.jpg";
+import HeaderModal from "./HeaderModal";
 
-export const Header = () => {
+const Header = ({ setIsLoggedIn }) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [userName, setUserName] = useState("");
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  const handleSignUp = () => {
+    setIsModalOpen(true);
+    setIsDropdownOpen(false);
+  };
+
+  const handleModalClose = (name) => {
+    setUserName(name);
+    setIsModalOpen(false);
+    setIsLoggedIn(true);
+  };
+
+  const toggleDropdown = () => {
+    setIsDropdownOpen((prev) => !prev);
+  };
+
   return (
-    <header className={styles.header}>
-      <a href="/" className={styles.header__logo}>
-        <img src="../../images/header-logo.png" alt="logo" />
-      </a>
-      <nav>
-        <ul className={styles.headerList}>
-          <li className={styles.headerList__item}>
-            <a href="" className={styles.headerList__link}>
-              Who we are
-            </a>
-          </li>
-          <li className={styles.headerList__item}>
-            <a href="" className={styles.headerList__link}>
-              Contacts
-            </a>
-          </li>
-          <li className={styles.headerList__item}>
-            <a href="" className={styles.headerList__link}>
-              Menu
-            </a>
-          </li>
-        </ul>
-      </nav>
-      <button className={styles.header__btn}>Sign Up</button>
-      <img
-        src="../../images/user.png"
-        alt="user"
-        className={styles.header__user}
-      />
-    </header>
+    <>
+      <div className={styles.headerContainer}>
+        <img src={logo} alt="Logo" className={styles.logo} />
+        <button onClick={toggleDropdown} className={styles.menuButton}>
+          Menu
+        </button>
+
+        <div
+          className={`${styles.dropdownMenu} ${
+            isDropdownOpen ? styles.open : ""
+          }`}
+        >
+          <p className={styles.headerText}>Who we are</p>
+          <p className={styles.headerText}>Contacts</p>
+          <p className={styles.headerText}>Menu</p>
+
+          <div className={styles.mobileUserSection}>
+            <img src={user} alt="User" className={styles.userIcon} />
+            {userName ? (
+              <span>{userName}</span>
+            ) : (
+              <button onClick={handleSignUp} className={styles.loginBtn}>
+                Sign Up
+              </button>
+            )}
+          </div>
+        </div>
+
+        <div className={styles.userSection}>
+          <img src={user} alt="User" className={styles.userIcon} />
+          {userName ? (
+            <span>{userName}</span>
+          ) : (
+            <button onClick={handleSignUp} className={styles.loginBtn}>
+              Sign Up
+            </button>
+          )}
+        </div>
+      </div>
+
+      {isModalOpen && <HeaderModal onClose={handleModalClose} />}
+    </>
   );
 };
+
+export default Header;

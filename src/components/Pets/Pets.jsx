@@ -1,55 +1,51 @@
-import styles from "./Pets.module.css";
-import { Container } from "../Container/Container";
+import React, { useEffect, useState } from "react";
+import NewsCard from "./NewsCard";
+import Container from "../Container";
+import styles from "./news.module.css";
 
-export const Pets = () => {
+const News = () => {
+  const [articles, setArticles] = useState([]);
+  const [visibleCount, setVisibleCount] = useState(4);
+  const apiKey = "ca8726351add45fab675ebcca0097d3f";
+  const query = "apple";
+
+  useEffect(() => {
+    const fetchNews = async () => {
+      try {
+        const response = await fetch(
+          `https://newsapi.org/v2/everything?q=${query}&sortBy=popularity&apiKey=${apiKey}`
+        );
+        const data = await response.json();
+        setArticles(data.articles.filter((article) => article.urlToImage));
+      } catch (error) {
+        console.error("Error fetching news:", error);
+      }
+    };
+
+    fetchNews();
+  }, [query]);
+
+  const handleSeeMore = () => {
+    setVisibleCount((prevCount) => prevCount + 4);
+  };
+
   return (
-    <section className={styles.pets}>
-      <Container>
-        <h2 className={styles.pets__title}>Interacting with our pets</h2>
-        <ul className={styles.petsList}>
-          <li className={styles.petsList__item}>
-            <img
-              src="../../images/pet1.png"
-              alt="dog ghost"
-              className={styles.petsList__photo}
-            />
-            <p className={styles.petsList__text}>
-              Rescue pups pose as ghosts in festive photo shoot
-            </p>
-          </li>
-          <li className={styles.petsList__item}>
-            <img
-              src="../../images/pet2.png"
-              alt="cat"
-              className={styles.petsList__photo}
-            />
-            <p className={styles.petsList__text}>
-              Cat interrupts morning coffee on sunny Washington morning
-            </p>
-          </li>
-          <li className={styles.petsList__item}>
-            <img
-              src="../../images/pet3.png"
-              alt="dog"
-              className={styles.petsList__photo}
-            />
-            <p className={styles.petsList__text}>
-              New study finds dogs pay more attention to women
-            </p>
-          </li>
-          <li className={styles.petsList__item}>
-            <img
-              src="../../images/pet4.png"
-              alt="dog"
-              className={styles.petsList__photo}
-            />
-            <p className={styles.petsList__text}>
-              Petting dogs gives health benefit, even if they are not yours
-            </p>
-          </li>
-        </ul>
-        <button className={styles.pets__btn}>See more</button>
-      </Container>
-    </section>
+    <Container>
+      <div className={styles.newsContainer}>
+        <h2 className={styles.newsTitle}>Interacting with our pets</h2>
+        <div className={styles.newsContent}>
+          <NewsCard articlesToShow={articles.slice(0, visibleCount)} />
+        </div>
+        {visibleCount < articles.length && (
+          <div className={styles.buttonContainer}>
+            <button className={styles.newsBtn} onClick={handleSeeMore}>
+              See More
+            </button>
+          </div>
+        )}
+      </div>
+    </Container>
   );
 };
+
+export default News;

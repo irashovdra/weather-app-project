@@ -1,25 +1,30 @@
 import "./App.css";
-import { SignUp } from "./components/SignUp/SignUp.jsx";
-import { MobileModal } from "./components/MobileModal/MobileModal.jsx";
-import { Header } from "./components/Header/Header.jsx";
-import { Hero } from "./components/Hero/Hero.jsx";
-import { Forecast } from "./components/Forecast/Forecast.jsx";
-import { Pets } from "./components/Pets/Pets.jsx";
-import { Nature } from "./components/Nature/Nature.jsx";
-import { Footer } from "./components/Footer/Footer.jsx";
+import { useState } from "react";
+import Slider from "./components/Slider/Slider";
+import Hero from "./components/Hero/Hero";
+import Weather from "./components/Weather/Weather";
+import Header from "./components/Header/Header";
+import News from "./components/News/News";
+import Footer from "./components/Footer/Footer";
 
 function App() {
+  const [city, setCity] = useState(["London"]);
+  const [uniqueData, setUniqueData] = useState([]);
+  const [isLoggedIn, setIsLoggedIn] = useState(false); 
+
   return (
-    <div className="App">
-      {/* <SignUp />
-      <MobileModal /> */}
-      <Header />
-      <Hero />
-      <Forecast />
-      <Pets />
-      <Nature />
+    <>
+      <Header setIsLoggedIn={setIsLoggedIn} />
+      <Hero proc={setCity} proc2={[uniqueData, setUniqueData]} />
+      {isLoggedIn && (
+        <>
+          <Weather city={[city, setCity]} uniqueDataBlock={[uniqueData, setUniqueData]} />
+          <News />
+          <Slider />
+        </>
+      )}
       <Footer />
-    </div>
+    </>
   );
 }
 

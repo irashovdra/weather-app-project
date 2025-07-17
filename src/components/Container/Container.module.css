@@ -1,20 +1,19 @@
 .container {
-  max-width: 300px;
-  padding-left: 10px;
-  padding-right: 10px;
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
+  width: 293px;
+  margin: 0 auto;
+  display: block;
+  position: relative;
 }
 
-@media screen and (min-width: 634px) {
+@media screen and (min-width: 834px) {
   .container {
-    max-width: 634px;
+    width: 634px;
   }
 }
 
-@media screen and (min-width: 1140px) {
+@media screen and (min-width: 1440px) {
   .container {
-    max-width: 1140px;
+    width: 1140px;
+    margin: 0 auto;
   }
 }

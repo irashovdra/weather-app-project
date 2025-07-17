@@ -1,50 +1,127 @@
-import styles from "./Hero.module.css";
-import { Container } from "../Container/Container";
+import heroBackground from "../../img/heroBackground.png";
+import loop from "../../img/svgs/loop.svg";
+import SearchIcon from "../../img/svgs/search.svg";
+import cities from "../../top-1000-cities.json";
+import { nanoid } from "nanoid";
+import { useState, useCallback, useEffect } from "react";
+import styles from "./hero.module.css";
 
-export const Hero = () => {
+const citiesNames = cities.map((item) => item.name).sort();
+
+export default function Hero({ setLocation, proc, proc2 }) {
+  const currentDate = new Date();
+  const weekdays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+  const months = [
+    "January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December"
+  ];
+
+  const [uniqueData, setUniqueData] = proc2;
+  const [showDrop, setShowDrop] = useState(false);
+  const [passedCities, setPassedCities] = useState(citiesNames);
+
+  const day = currentDate.getDate();
+  const suffix = ["th", "st", "nd", "rd"][
+    day % 10 < 4 && (day % 100) - (day % 10) !== 10 ? day % 10 : 0
+  ];
+
+  const fetchCountry = useCallback((city) => {
+    fetch(`https://api.openweathermap.org/data/2.5/weather?id=524901&appid=c9400bae708c82b43bfc3a812d020418&q=${city}&units=metric`)
+      .then(res => res.json())
+      .then(data => {
+        const exists = uniqueData.some(item => item.city === city);
+        const updated = uniqueData.map(obj =>
+          obj.city === city ? {
+            city,
+            country: data.sys.country,
+            temp: data.main.temp.toFixed(1),
+          } : obj
+        );
+
+        if (exists) {
+          setUniqueData(updated);
+        } else {
+          setUniqueData([...uniqueData, {
+            city,
+            country: data.sys.country,
+            temp: data.main.temp.toFixed(1),
+          }]);
+        }
+      });
+  }, [uniqueData, setUniqueData]);
+
+  useEffect(() => {
+    fetchCountry("London");
+  }, []);
+
+  const drop = () => {
+    const len = Math.min(4, passedCities.length);
+    const rawList = passedCities.slice(0, len);
+
+    if (len) {
+      return rawList.map(city => (
+        <li
+          onClick={(e) => {
+            fetchCountry(city);
+            proc(prev => prev.includes(city) ? [...prev] : [...prev, city]);
+            e.target.closest("form").children[1].value = "";
+          }}
+          key={nanoid()}
+        >
+          <img src={loop} alt="search" />
+          {city}
+        </li>
+      ));
+    } else {
+      return <li>No cities found</li>;
+    }
+  };
+
+  const handleFormSubmit = (e) => e.preventDefault();
+
   return (
-    <section className={styles.hero}>
-      <Container>
-        <h2 className={styles.hero__title}>Weather dashboard</h2>
-        <ul className={styles.heroList}>
-          <li className={styles.heroList__item}>
-            <p className={styles.heroList__text}>
-              Create your personal list of favorite cities and always be aware
-              of the weather.
-            </p>
-          </li>
-          <li className={styles.heroList__item}>
-            <p className={styles.heroList__text}>
-              October 2023 <br />
-              Friday, 13th
-            </p>
-          </li>
-        </ul>
-        <div className={styles.hero__filling}>
-          <input
-            placeholder="Search location..."
-            type="text"
-            className={styles.hero__search}
-          />
-          <button className={styles.hero__btn}>
-            <svg
-              width="25"
-              height="25"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M15.7955 15.8111L21 21M18 10.5C18 14.6421 14.6421 18 10.5 18C6.35786 18 3 14.6421 3 10.5C3 6.35786 6.35786 3 10.5 3C14.6421 3 18 6.35786 18 10.5Z"
-                stroke="#000000"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg>
-          </button>
-        </div>
-      </Container>
+    <section className={styles.hero} style={{ backgroundImage: `url(${heroBackground})` }}>
+      <h2>Weather dashboard</h2>
+      <div className={styles.infoBlock}>
+        <p>
+          Create your personal list <br />
+          of favorite cities and always <br />
+          be aware of the weather.
+        </p>
+        <span></span>
+        <p>
+          {months[currentDate.getMonth()]} {currentDate.getFullYear()} <br />
+          {weekdays[currentDate.getDay()]}, {`${day}${suffix}`}
+        </p>
+      </div>
+      <form className={styles.searchForm} onSubmit={handleFormSubmit}>
+        {showDrop && <ul className={styles.searchDrop}>{drop()}</ul>}
+        <input
+          className={styles.searchInput}
+          type="text"
+          name="location"
+          placeholder="Search location..."
+          onFocus={(e) => {
+            setShowDrop(true);
+            e.target.style.borderRadius = "10px 0px 0px 0px";
+          }}
+          onBlur={(e) => {
+            setTimeout(() => {
+              setShowDrop(false);
+              e.target.style.borderRadius = "10px 0px 0px 10px";
+            }, 100);
+          }}
+          onInput={(e) => {
+            const q = e.target.value.toLowerCase();
+            setPassedCities(citiesNames.filter(city =>
+              city.toLowerCase().includes(q)
+            ));
+          }}
+        />
+        <button className={styles.searchButton} type="submit">
+          <img src={SearchIcon} alt="Search icon" />
+        </button>
+      </form>
     </section>
   );
-};
+}
