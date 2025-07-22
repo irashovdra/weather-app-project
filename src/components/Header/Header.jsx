@@ -1,9 +1,8 @@
-// Header.jsx
+
 import React, { useState } from "react";
 import styles from "./Header.module.css";
-import logo from "../../img/logo.jpg";
-import user from "../../img/user.jpg";
-import HeaderModal from "./HeaderModal";
+import logo from "../../images/logo.png";
+import user from "../../images/user.png";
 
 const Header = ({ setIsLoggedIn }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);

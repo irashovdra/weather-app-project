@@ -1,4 +1,4 @@
-import Container from "../Container"
+import Container from "../Container/Container"
 import bin from "../../img/svgs/delete.svg"
 import heart from "../../img/svgs/heart.svg"
 import refresh from "../../img/svgs/refresh.svg"

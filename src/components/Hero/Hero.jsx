@@ -1,4 +1,4 @@
-import heroBackground from "../../img/heroBackground.png";
+import heroBackground from "../../images/hero-bg.jpg";
 import loop from "../../img/svgs/loop.svg";
 import SearchIcon from "../../img/svgs/search.svg";
 import cities from "../../top-1000-cities.json";

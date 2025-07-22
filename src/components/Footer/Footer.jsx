@@ -1,10 +1,10 @@
 // Footer.jsx
 import React from "react";
 import styles from "./Footer.module.css";
-import logo from "../../img/logo 2.png";
-import inst from "../../img/svgs/inst.svg";
-import face from "../../img/svgs/facebook.svg";
-import whatsapp from "../../img/svgs/whatsapp.svg";
+import logo from "../../images/logo.png";
+import inst from "../../images/insta.png";
+import face from "../../images/facebook.png";
+import whatsapp from "../../images/whatsapp.png";
 
 const Footer = () => {
   return (
