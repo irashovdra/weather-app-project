@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import Container from "../Container";
-import left from "../../img/svgs/chevron-left.svg";
-import right from "../../img/svgs/chevron-right.svg";
-import styles from "./Slider.module.css";
+import Container from "../Container/Container";
+import left from "../../images/left-arrow.png";
+import right from "../../images/right-arrow.png";
+import styles from "./Nature.module.css"
 
 let list = [
   { largeImageURL: "./", id: 124 },

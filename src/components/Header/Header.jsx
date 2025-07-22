@@ -1,5 +1,6 @@
 
 import React, { useState } from "react";
+import HeaderModal from "../SignUpModal/SignUpModal";
 import styles from "./Header.module.css";
 import logo from "../../images/logo.png";
 import user from "../../images/user.png";

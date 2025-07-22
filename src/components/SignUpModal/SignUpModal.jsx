@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import styles from "./header.module.css";
+import styles from "./SignUpModal.module.css"
 
 const HeaderModal = ({ onClose }) => {
   const [name, setName] = useState("");

@@ -8,3 +8,5 @@ export const fetchWeatherByCity = async (city) => {
   }
   return res.json();
 };
+
+console.log(fetchWeatherByCity());

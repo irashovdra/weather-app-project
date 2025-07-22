@@ -1,12 +1,12 @@
 import Container from "../Container/Container"
-import bin from "../../img/svgs/delete.svg"
-import heart from "../../img/svgs/heart.svg"
-import refresh from "../../img/svgs/refresh.svg"
-import sun from "../../img/svgs/sun.svg"
-import temperature from "../../img/svgs/temperature.svg"
-import pressure from "../../img/svgs/pressure.svg"
-import humidity from "../../img/svgs/humidity.svg"
-import wind from "../../img/svgs/wind.svg"
+import bin from "../../images/bin.png"
+import heart from "../../images/heart.png"
+import refresh from "../../images/refresh.png"
+import sun from "../../images/sun.png"
+import temperature from "../../images/temperature.png"
+import pressure from "../../images/pressure.png"
+import humidity from "../../images/humidity.png"
+import wind from "../../images/wind.png"
 import { useCallback, useEffect, useState } from "react"
 import styles from "./Weather.module.css"
 
@@ -42,7 +42,7 @@ const Weather = ({ cityName, weather, updateWeather, removeCity }) => {
               onClick={onRefresh}
               aria-label="Refresh"
             >
-              <img src={refresh} alt="refresh" />
+              <img width="50" height="50" src={refresh} alt="refresh" />
             </button>
             <button
               className={styles["weather__btn"]}

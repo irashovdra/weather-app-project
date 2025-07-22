@@ -1,10 +1,10 @@
 import heroBackground from "../../images/hero-bg.jpg";
-import loop from "../../img/svgs/loop.svg";
-import SearchIcon from "../../img/svgs/search.svg";
+import loop from "../../images/loop.png";
+import SearchIcon from "../../images/loop.png";
 import cities from "../../top-1000-cities.json";
 import { nanoid } from "nanoid";
 import { useState, useCallback, useEffect } from "react";
-import styles from "./hero.module.css";
+import styles from "./Hero.module.css";
 
 const citiesNames = cities.map((item) => item.name).sort();
 

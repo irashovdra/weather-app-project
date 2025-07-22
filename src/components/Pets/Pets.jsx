@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import NewsCard from "./NewsCard";
-import Container from "../Container";
-import styles from "./news.module.css";
+import NewsCard from "./NewsCard"
+import Container from "../Container/Container";
+import styles from "./Pets.module.css"
 
 const News = () => {
   const [articles, setArticles] = useState([]);
@@ -16,6 +16,7 @@ const News = () => {
           `https://newsapi.org/v2/everything?q=${query}&sortBy=popularity&apiKey=${apiKey}`
         );
         const data = await response.json();
+        console.log(data);
         setArticles(data.articles.filter((article) => article.urlToImage));
       } catch (error) {
         console.error("Error fetching news:", error);
