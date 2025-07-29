@@ -1,14 +1,30 @@
 {
   "files": {
-    "main.css": "/weather-app-react/static/css/main.17fdc9ef.css",
-    "main.js": "/weather-app-react/static/js/main.6e18b50e.js",
-    "static/media/hero-bg.jpg": "/weather-app-react/static/media/hero-bg.fa16e0fe6593aa6d4e66.jpg",
-    "index.html": "/weather-app-react/index.html",
-    "main.17fdc9ef.css.map": "/weather-app-react/static/css/main.17fdc9ef.css.map",
-    "main.6e18b50e.js.map": "/weather-app-react/static/js/main.6e18b50e.js.map"
+    "main.css": "/weather-app-project/static/css/main.89a611b3.css",
+    "main.js": "/weather-app-project/static/js/main.3853b3bf.js",
+    "static/media/search.svg": "/weather-app-project/static/media/search.bb721c3ee0e1192397d913ae33448463.svg",
+    "static/media/heroBackground.png": "/weather-app-project/static/media/heroBackground.e126fbe91a161bd5c0bf.png",
+    "static/media/pressure.svg": "/weather-app-project/static/media/pressure.46da3d8828cf64eb0a997b2bcb053a03.svg",
+    "static/media/whatsapp.svg": "/weather-app-project/static/media/whatsapp.320aefaad0632cc0e456929a71f4124b.svg",
+    "static/media/inst.svg": "/weather-app-project/static/media/inst.e596203158ec42e901c4ef82aa002296.svg",
+    "static/media/heart.svg": "/weather-app-project/static/media/heart.939659c46bff3afd78e3f4b3f062188d.svg",
+    "static/media/visibility.svg": "/weather-app-project/static/media/visibility.9072520fd4667d4f4b080eebed1b4f18.svg",
+    "static/media/temperature.svg": "/weather-app-project/static/media/temperature.73802dcc92c6242e26e4742e173eedc3.svg",
+    "static/media/humidity.svg": "/weather-app-project/static/media/humidity.3cbb4363665fb4db4fc94cc8b2198ea8.svg",
+    "static/media/wind.svg": "/weather-app-project/static/media/wind.4641ac7050be9b52d65bee310c4b5707.svg",
+    "static/media/sun.svg": "/weather-app-project/static/media/sun.b158ad7cb45d359e1637206e6a3dd2ce.svg",
+    "static/media/facebook.svg": "/weather-app-project/static/media/facebook.61d008030e4854644ba0c792b3c9ac52.svg",
+    "static/media/loop.svg": "/weather-app-project/static/media/loop.59e022eb34de98943af7f25a017783d3.svg",
+    "static/media/refresh.svg": "/weather-app-project/static/media/refresh.86e7b11e96a1488d6ce68ff1e91ff012.svg",
+    "static/media/delete.svg": "/weather-app-project/static/media/delete.18797c13b261d6a00505338f4c5c4f3f.svg",
+    "index.html": "/weather-app-project/index.html",
+    "static/media/chevron-left.svg": "/weather-app-project/static/media/chevron-left.982a40d4f9e3cf9fdaeaf4af9da46c14.svg",
+    "static/media/chevron-right.svg": "/weather-app-project/static/media/chevron-right.d45fd2f46e93f5c3aa0a7d0617d9fecf.svg",
+    "main.89a611b3.css.map": "/weather-app-project/static/css/main.89a611b3.css.map",
+    "main.3853b3bf.js.map": "/weather-app-project/static/js/main.3853b3bf.js.map"
   },
   "entrypoints": [
-    "static/css/main.17fdc9ef.css",
-    "static/js/main.6e18b50e.js"
+    "static/css/main.89a611b3.css",
+    "static/js/main.3853b3bf.js"
   ]
 }
