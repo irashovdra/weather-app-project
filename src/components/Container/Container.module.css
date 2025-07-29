@@ -1,4 +1,4 @@
-.container {
+.containerBlock {
   width: 293px;
   margin: 0 auto;
   display: block;
@@ -6,13 +6,13 @@
 }
 
 @media screen and (min-width: 834px) {
-  .container {
+  .containerBlock {
     width: 634px;
   }
 }
 
 @media screen and (min-width: 1440px) {
-  .container {
+  .containerBlock {
     width: 1140px;
     margin: 0 auto;
   }

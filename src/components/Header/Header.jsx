@@ -1,9 +1,8 @@
-
 import React, { useState } from "react";
-import HeaderModal from "../SignUpModal/SignUpModal";
 import styles from "./Header.module.css";
-import logo from "../../images/logo.png";
-import user from "../../images/user.png";
+import logo from "../../images/logo.jpg";
+import user from "../../images/user.jpg";
+import HeaderModal from "../HeaderModal/HeaderModal";
 
 const Header = ({ setIsLoggedIn }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -28,14 +27,13 @@ const Header = ({ setIsLoggedIn }) => {
   return (
     <>
       <div className={styles.headerContainer}>
-        <img src={logo} alt="Logo" className={styles.logo} />
-        <button onClick={toggleDropdown} className={styles.menuButton}>
+        <img className={styles.logo} src={logo} alt="Logo" />
+        <button className={styles.menuButton} onClick={toggleDropdown}>
           Menu
         </button>
-
         <div
           className={`${styles.dropdownMenu} ${
-            isDropdownOpen ? styles.open : ""
+            isDropdownOpen ? styles.dropdownMenuOpen : ""
           }`}
         >
           <p className={styles.headerText}>Who we are</p>
@@ -43,11 +41,11 @@ const Header = ({ setIsLoggedIn }) => {
           <p className={styles.headerText}>Menu</p>
 
           <div className={styles.mobileUserSection}>
-            <img src={user} alt="User" className={styles.userIcon} />
+            <img className={styles.userIcon} src={user} alt="User" />
             {userName ? (
               <span>{userName}</span>
             ) : (
-              <button onClick={handleSignUp} className={styles.loginBtn}>
+              <button className={styles.loginBtn} onClick={handleSignUp}>
                 Sign Up
               </button>
             )}
@@ -55,11 +53,11 @@ const Header = ({ setIsLoggedIn }) => {
         </div>
 
         <div className={styles.userSection}>
-          <img src={user} alt="User" className={styles.userIcon} />
+          <img className={styles.userIcon} src={user} alt="User" />
           {userName ? (
             <span>{userName}</span>
           ) : (
-            <button onClick={handleSignUp} className={styles.loginBtn}>
+            <button className={styles.loginBtn} onClick={handleSignUp}>
               Sign Up
             </button>
           )}

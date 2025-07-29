@@ -1,79 +1,480 @@
-.weather {
-  background-color: #fff;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  padding: 16px;
-  margin-bottom: 20px;
+.cardList {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.optionButton {
+    font-family: inherit;
+    font-size: 9px;
+    font-weight: 500;
+    border-radius: 5px;
+    background: #FFB36C;
+    border: none;
+    box-sizing: border-box;
+    transition: 300ms;
+    cursor: pointer;
+}
+.optionButton:hover {
+    background: #f3aa66;
+    transform: scale(1.1);
+}
+.optionButton.clicked {
+    transition: 150ms;
+    transform: scale(0.95);
+}
+.cardList > li {
+    font-family: inherit;
+    width: 293px;
+    height: 392px;
+    border-radius: 20px;
+    background: #E8E8E8;
+}
+.cardList > li > ul:first-child {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 15px 15px 25px 15px;
+}
+.cardList > li > ul:first-child p {
+    font-size: 12px;
+    font-weight: 500;
+}
+.cardList > li h2 {
+    font-size: 20px;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 11px;
+}
+.cardList > li h3 {
+    font-size: 24px;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 44px;
+}
+.cardList > li h4 {
+    font-size: 12px;
+    font-weight: 500;
+    text-align: center;
+}
+.cardList > li > img {
+    width: 83px;
+    height: 83px;
+    margin: 25px auto;
+    display: block;
+}
+.cardList > li .options {
+    display: flex;
+    flex-direction: row;
+    gap: 21px;
+    margin-bottom: 12px;
+    justify-content: center;
+}
+.cardList > li .options li {
+    width: 93px;
+    height: 23px;
+}
+.cardList > li .options li button {
+    width: 100%;
+    height: 100%;
+}
+.cardList > li div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.cardList > li div img {
+    width: 24px;
+    height: 24px;
+    transition: 300ms;
+    user-select: none;
+    cursor: pointer;
+}
+.cardList > li div img:hover {
+    transform: scale(1.1);
+}
+.cardList > li div img.clicked {
+    transition: 150ms;
+    transform: scale(0.95);
+}
+.cardList > li div button {
+    width: 84px;
+    height: 27px;
 }
 
-.weather__row {
-  display: flex;
-  flex-direction: column;
+/* Media queries */
+
+@media screen and (min-width: 834px) {
+    .cardList {
+        gap: 110px;
+    }
+    .cardList > li {
+        width: 262px;
+        height: 352px;
+    }
+    .cardList > li > ul:first-child {
+        margin: 12px 25px;
+    }
+    .cardList > li h2 {
+        margin-bottom: 8px;
+    }
+    .cardList > li h3 {
+        margin-bottom: 32px;
+    }
+    .cardList > li div button {
+        width: 81px;
+        height: 23px;
+    }
 }
 
-.weather__top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+@media screen and (min-width: 1440px) {
+    .cardList {
+        gap: 90px;
+    }
+    .optionButton {
+        font-size: 10px;
+        border-radius: 10px;
+    }
+    .cardList > li {
+        width: 320px;
+        height: 430px;
+    }
+    .cardList > li > ul:first-child {
+        margin: 15px 30px;
+    }
+    .cardList > li > ul:first-child p {
+        font-size: 14px;
+    }
+    .cardList > li h2 {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+    .cardList > li .options {
+        margin-bottom: 15px;
+        gap: 25px;
+    }
+    .cardList > li .options li {
+        width: 114px;
+        height: 28px;
+    }
+    .cardList > li h4 {
+        font-size: 14px;
+    }
+    .cardList > li > img {
+        width: 120px;
+        height: 120px;
+        margin: 22px auto;
+    }
+    .cardList > li h3 {
+        font-size: 32px;
+        margin-bottom: 38px;
+    }
+    .cardList > li div img {
+        width: 30px;
+        height: 30px;
+    }
+    .cardList > li div button {
+        width: 100px;
+        height: 30px;
+    }
 }
 
-.weather__title-wrap {
-  display: flex;
-  align-items: center;
-  gap: 12px;
+/* Wrapper */
+
+.wrapper {
+    gap: 80px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 35px 0px 50px;
+    font-family: "Montserrat";
 }
 
-.weather__icon {
-  width: 30px;
-  height: 30px;
+@media screen and (min-width: 834px) {
+    .wrapper {
+        padding: 50px 0px;
+    }
 }
 
-.weather__title {
-  font-size: 20px;
-  font-weight: 600;
+@media screen and (min-width: 1440px) {
+    .wrapper {
+        padding: 60px 0px 80px;
+    }
 }
 
-.weather__buttons {
-  display: flex;
-  gap: 10px;
+/* MoreData */
+
+.moreData {
+    background: #E8E8E8;
+    padding: 35px 43px;
+    border-radius: 15px;
+    box-sizing: border-box;
+    font-family: inherit;
 }
 
-.weather__btn {
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  padding: 4px;
-  transition: transform 0.2s ease;
+.moreData ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 35px;
 }
 
-.weather__btn:hover {
-  transform: scale(1.1);
+.moreData ul li {
+    width: 207px;
+    height: 160px;
+    background: #D9D9D9;
+    border-radius: 10px;
+    box-sizing: border-box;
+    padding: 15px 0px;
 }
 
-.weather__content {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 16px;
+.moreData ul li p {
+    font-size: 10px;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 8px;
 }
 
-.weather__temp {
-  display: flex;
-  align-items: center;
-  font-size: 24px;
-  font-weight: bold;
-  gap: 8px;
+.moreData ul li h3 {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 18px;
+    text-align: center;
 }
 
-.weather__info {
-  display: flex;
-  gap: 24px;
-  align-items: center;
+.moreData ul li img {
+    width: 60px;
+    height: 60px;
+    margin: auto;
+    display: block;
 }
 
-.weather__info-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-size: 14px;
-  gap: 6px;
+@media screen and (min-width: 834px) {
+    .moreData {
+        padding: 30px;
+    }
+    .moreData ul {
+        gap: 0px;
+        row-gap: 30px;
+        column-gap: 21px;
+    }
+    .moreData ul li {
+        width: 177px;
+        height: 200px;
+        user-select: none;
+    }
+    .moreData ul li p {
+        font-size: 12px;
+    }
+    .moreData ul li h3 {
+        font-size: 16px;
+        margin-bottom: 37px;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .moreData {
+        border-radius: 20px;
+        padding: 40px 77px;
+    }
+    .moreData ul {
+        row-gap: 40px;
+        column-gap: 58px;
+    }
+    .moreData ul li {
+        width: 290px;
+        height: 217px;
+        transition: 200ms;
+    }
+    .moreData ul li:hover {
+        transform: scale(1.04);
+    }
+    .moreData ul li p {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+    .moreData ul li h3 {
+        font-size: 32px;
+        margin-bottom: 23px;
+    }
+    .moreData ul li img {
+        width: 85px;
+        height: 85px;
+    }
+}
+
+/* WeeklyData */
+
+.weeklyData {
+    border-radius: 15px;
+    background: #E8E8E8;
+    padding: 18px 25px 35px;
+    box-sizing: border-box;
+}
+
+.weeklyData h3 {
+    margin-left: 18px;
+    font-weight: 600;
+    font-size: 10px;
+    margin-bottom: 25px;
+}
+
+.weeklyData ul {
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 43px;
+    row-gap: 35px;
+}
+
+.weeklyData ul li {
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    background: #D9D9D9;
+    width: 100px;
+    height: 140px;
+    transition: 300ms;
+}
+
+.weeklyData ul li:hover {
+    transform: scale(1.02);
+}
+
+.weeklyData ul li img {
+    width: 30px;
+    height: 30px;
+    display: block;
+    margin: auto;
+    margin-bottom: 7px;
+}
+
+.weeklyData ul li p {
+    font-size: 10px;
+    font-weight: 500;
+}
+
+.weeklyData ul li p:first-child {
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.weeklyData ul li span {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+@media screen and (min-width: 834px) {
+    .weeklyData {
+        padding: 20px 35px 35px;
+    }
+    .weeklyData h3 {
+        margin-left: 10px;
+        margin-bottom: 17px;
+        font-size: 12px;
+    }
+    .weeklyData ul {
+        column-gap: 0px;
+        row-gap: 0px;
+        gap: 17px;
+    }
+    .weeklyData ul li {
+        position: relative;
+        padding: 0px 16px;
+        box-sizing: border-box;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 564px;
+        height: 40px;
+    }
+    .weeklyData ul li img {
+        width: 35px;
+        height: 35px;
+        margin: 0px;
+    }
+    .weeklyData ul li span {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        flex-direction: row;
+        margin: 0px;
+        align-items: center;
+        gap: 15px;
+    }
+    .weeklyData ul li p {
+        font-size: 14px;
+    }
+    .weeklyData ul li p:first-child {
+        margin: 0px;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .weeklyData {
+        padding: 26px 76px 42px;
+    }
+    .weeklyData h3 {
+        margin-bottom: 20px;
+        font-size: 16px;
+    }
+    .weeklyData ul {
+        gap: 10px;
+    }
+    .weeklyData ul li {
+        padding: 0px 50px;
+        width: 986px;
+        height: 47px;
+    }
+    .weeklyData ul li img {
+        width: 45px;
+        height: 45px;
+    }
+    .weeklyData ul li p {
+        font-size: 16px;
+    }
+    .weeklyData ul li span {
+        gap: 13px;
+    }
+}
+
+/* HourlyData */
+
+.hourlyData {
+    border-radius: 15px;
+    background: #E8E8E8;
+    box-sizing: border-box;
+    padding: 18px 25px 24px;
+}
+
+.hourlyData h2 {
+    font-size: 10px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    margin-left: 18px;
+}
+
+@media screen and (min-width: 834px) {
+    .hourlyData {
+        padding: 20px 38px 26px;
+    }
+    .hourlyData h2 {
+        font-size: 12px;
+        margin-left: 7px;
+        margin-bottom: 28px;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .hourlyData {
+        padding: 26px 40px 40px;
+    }
+    .hourlyData h2 {
+        font-size: 16px;
+        margin-bottom: 20px;
+        margin-left: 37px;
+    }
 }

@@ -1,22 +1,27 @@
-.hero {
+.heroBlock {
   box-sizing: border-box;
   color: white;
   font-family: Montserrat;
-  background-repeat: no-repeat;
-  background-position: center;
+  background: url("../../images/heroBackground.png") no-repeat center;
   background-size: cover;
   height: 345px;
   padding: 50px 116px 100px;
 }
 
-h2 {
+.heroBlock h2 {
   margin-bottom: 35px;
   font-size: 14px;
   font-weight: 600;
   text-align: center;
 }
 
-.infoBlock {
+.heroBlock p {
+  line-height: normal;
+  font-size: 10px;
+  font-weight: 500;
+}
+
+.heroTextGroup {
   position: relative;
   padding-left: 25px;
   width: 161px;
@@ -25,9 +30,11 @@ h2 {
   flex-direction: column;
   justify-content: center;
   gap: 20px;
+  align-items: flex-start;
+  box-sizing: border-box;
 }
 
-.infoBlock span {
+.heroTextGroup span {
   height: 80px;
   border: 1px solid #fff;
   position: absolute;
@@ -35,18 +42,81 @@ h2 {
   top: 0;
 }
 
-p {
-  font-size: 10px;
-  font-weight: 500;
-  line-height: normal;
+@media screen and (min-width: 834px) {
+  .heroBlock {
+    padding: 40px 211px;
+  }
+
+  .heroBlock h2 {
+    font-size: 20px;
+    margin-bottom: 40px;
+  }
+
+  .heroBlock p {
+    font-size: 14px;
+  }
+
+  .heroTextGroup {
+    width: 407px;
+    padding-right: 71px;
+    padding-left: 0;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .heroTextGroup span {
+    position: relative;
+    height: 110px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .heroBlock {
+    padding: 100px 323px;
+    height: 595px;
+  }
+
+  .heroBlock h2 {
+    font-size: 40px;
+    margin-bottom: 80px;
+  }
+
+  .heroBlock p {
+    font-size: 24px;
+  }
+
+  .heroTextGroup {
+    width: 713px;
+    padding-right: 116px;
+  }
+
+  .heroTextGroup span {
+    height: 144px;
+  }
 }
 
 .searchForm {
   display: flex;
   align-items: center;
   position: relative;
+  flex-shrink: 0;
   width: 174px;
   margin: 0 auto;
+}
+
+@media (min-width: 834px) {
+  .searchForm {
+    width: 402px;
+    height: 27px;
+    margin-top: 64px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .searchForm {
+    width: 625px;
+    padding-right: 60px;
+  }
 }
 
 .searchInput {
@@ -54,7 +124,7 @@ p {
   height: 10px;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
-  padding: 4px 0 4px 10px;
+  padding: 4px 0 4px 10.4px;
   color: black;
   font-size: 6px;
   border: none;
@@ -62,14 +132,43 @@ p {
 
 .searchInput::placeholder {
   color: #878787;
+  font-size: 6px;
   font-family: "Montserrat";
   font-weight: 500;
-  font-size: 6px;
 }
 
 .searchInput:focus,
 .searchInput:active {
   outline: none;
+}
+
+@media screen and (min-width: 834px) {
+  .searchInput {
+    width: 373px;
+    padding: 8px 0 6.6px 19px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    background: #d9d9d9;
+    font-size: 10px;
+  }
+
+  .searchInput::placeholder {
+    font-size: 10px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .searchInput {
+    width: 625px;
+    height: 42px;
+    border-radius: 10px 0 0 10px;
+    padding: 0 10px;
+    font-size: 16px;
+  }
+
+  .searchInput::placeholder {
+    font-size: 14px;
+  }
 }
 
 .searchButton {
@@ -78,14 +177,36 @@ p {
   height: 18px;
   border: none;
   border-radius: 0 10px 10px 0;
-  padding: 1px;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 1px;
 }
 
 .searchButton img {
   width: 9px;
+}
+
+@media (min-width: 834px) {
+  .searchButton {
+    width: 29.4px;
+    height: 25px;
+  }
+
+  .searchButton img {
+    width: 16px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .searchButton {
+    width: 50px;
+    height: 41px;
+  }
+
+  .searchButton img {
+    width: 25px;
+  }
 }
 
 .searchDrop {
@@ -102,13 +223,11 @@ p {
 
 .searchDrop li {
   height: 45px;
-  width: 100%;
-  padding: 0 15px;
   display: flex;
+  padding: 0 15px;
   align-items: center;
   color: #2b2b2b;
   cursor: pointer;
-  user-select: none;
 }
 
 .searchDrop li:hover {
@@ -122,96 +241,27 @@ p {
   margin-right: 10px;
 }
 
-/* Media Queries */
-@media screen and (min-width: 834px) {
-  .hero {
-    padding: 40px 211px;
-  }
-  h2 {
-    font-size: 20px;
-    margin-bottom: 40px;
-  }
-  p {
-    font-size: 14px;
-  }
-  .infoBlock {
-    flex-direction: row;
-    width: 407px;
-    padding-right: 71px;
-    padding-left: 0;
-    justify-content: space-between;
-  }
-  .infoBlock span {
-    position: relative;
-    height: 110px;
-  }
-  .searchForm {
-    width: 402px;
-    height: 27px;
-    margin-top: 64px;
-  }
-  .searchInput {
-    width: 373px;
-    font-size: 10px;
-    border-radius: 10px 0 0 10px;
-    background: #d9d9d9;
-  }
-  .searchInput::placeholder {
-    font-size: 10px;
-  }
-  .searchButton {
-    width: 29.4px;
-    height: 25px;
-  }
-  .searchButton img {
-    width: 16px;
-  }
+@media screen and (max-width: 1440px) {
   .searchDrop {
     width: 372px;
     top: 95%;
+    font-size: smaller;
   }
 }
 
-@media screen and (min-width: 1440px) {
-  .hero {
-    padding: 100px 323px;
-    height: 595px;
-  }
-  h2 {
-    font-size: 40px;
-    margin-bottom: 80px;
-  }
-  p {
-    font-size: 24px;
-  }
-  .infoBlock {
-    width: 713px;
-    padding-right: 116px;
-  }
-  .infoBlock span {
-    height: 144px;
-  }
-  .searchForm {
-    width: 625px;
-    padding-right: 60px;
-  }
-  .searchInput {
-    width: 625px;
-    height: 42px;
-    font-size: 16px;
-    background: #d9d9d9;
-  }
-  .searchInput::placeholder {
-    font-size: 14px;
-  }
-  .searchButton {
-    width: 50px;
-    height: 41px;
-  }
-  .searchButton img {
-    width: 25px;
-  }
+@media screen and (max-width: 834px) {
   .searchDrop {
-    width: 625px;
+    width: 157px;
+    font-size: xx-small;
+  }
+
+  .searchDrop li {
+    height: 20px;
+    padding: 0 10px;
+  }
+
+  .searchDrop li img {
+    width: 10px;
+    height: 10px;
   }
 }

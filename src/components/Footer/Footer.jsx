@@ -1,10 +1,9 @@
-// Footer.jsx
 import React from "react";
 import styles from "./Footer.module.css";
-import logo from "../../images/logo.png";
-import inst from "../../images/insta.png";
-import face from "../../images/facebook.png";
-import whatsapp from "../../images/whatsapp.png";
+import logo from "../../images/logo2.png";
+import inst from "../../images/svgs/inst.svg";
+import face from "../../images/svgs/facebook.svg";
+import whatsapp from "../../images/svgs/whatsapp.svg";
 
 const Footer = () => {
   return (
@@ -26,13 +25,19 @@ const Footer = () => {
             <h2 className={styles.sectionTitle}>Contact us</h2>
             <ul className={styles.contactList}>
               <li className={styles.contactItem}>
-                <a href="#"><img src={inst} alt="Instagram" /></a>
+                <a href="#">
+                  <img src={inst} alt="Instagram" />
+                </a>
               </li>
               <li className={styles.contactItem}>
-                <a href="#"><img src={face} alt="Facebook" /></a>
+                <a href="#">
+                  <img src={face} alt="Facebook" />
+                </a>
               </li>
               <li className={styles.contactItem}>
-                <a href="#"><img src={whatsapp} alt="WhatsApp" /></a>
+                <a href="#">
+                  <img src={whatsapp} alt="WhatsApp" />
+                </a>
               </li>
             </ul>
           </div>
