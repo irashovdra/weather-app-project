@@ -25,40 +25,42 @@ export default function Hero({ setLocation, proc, proc2 }) {
     day % 10 < 4 && (day % 100) - (day % 10) !== 10 ? day % 10 : 0
   ];
 
-  const fetchCountry = useCallback((city) => {
-    fetch(
-      `https://api.openweathermap.org/data/2.5/weather?id=524901&appid=c9400bae708c82b43bfc3a812d020418&q=${city}&units=metric`
+  const fetchCountry = useCallback(async (city) => {
+   return await fetch(
+      `https://api.weatherapi.com/v1/forecast.json?key=b45feb12d0584be5922204733241511&q=${city}&days=1&aqi=no&alerts=no`
     )
       .then((res) => res.json())
-      .then((val) => {
-        let doesExist = false;
-        const newList = uniqueData.map((obj) =>
-          obj.city === city
-            ? ((doesExist = true), {
-                city,
-                country: val.sys.country,
-                temp: val.main.temp.toFixed(1),
-              })
-            : obj
-        );
-        if (!doesExist) {
-          setUniqueData([
-            ...uniqueData,
-            {
-              city,
-              country: val.sys.country,
-              temp: val.main.temp.toFixed(1),
-            },
-          ]);
-        } else {
-          setUniqueData(newList);
-        }
-      });
+     
   }, [uniqueData, setUniqueData]);
 
   useEffect(() => {
-    fetchCountry("London");
-  }, [fetchCountry]);
+    fetchCountry("London").then((val) => {
+        let doesExist = false;
+        console.log(val);
+        // const newList = uniqueData.map((obj) =>
+        //   obj.city === city
+        //     ? ((doesExist = true), {
+        //         // city,
+        //         // country: val.sys.country,
+        //         // temp: val.main.temp.toFixed(1),
+        //       })
+        //     : obj
+        // );
+      //   if (!doesExist) {
+      //     setUniqueData([
+      //       ...uniqueData,
+      //       {
+      //         // city,
+      //         // country: val.sys.country,
+      //         // temp: val.main.temp.toFixed(1),
+      //       },
+      //     ]);
+      //   } else {
+      //     setUniqueData(newList);
+      //   }
+      });
+  }, 
+  [fetchCountry]);
 
   function drop(list) {
     const len = Math.min(4, passedCities.length);
@@ -125,6 +127,7 @@ export default function Hero({ setLocation, proc, proc2 }) {
           <img src={SearchIcon} alt="Search icon" />
         </button>
       </form>
+      <NewList ></NewList>
     </section>
   );
 }
